@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade em Ação</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script src="resources/script/script.js"></script>
+</head>
+<body>
+    
+
+<header>
+    <h1>Comunidade em Ação</h1>
+    <p>Sistema de Gestão Comunitária</p>
+</header>
+
+<nav>
+    <button onclick="mostrarTela('inicio')">Início</button>
+    <button onclick="mostrarTela('moradores')">Moradores</button>
+    <button onclick="mostrarTela('solicitacoes')">Solicitações</button>
+    <button onclick="mostrarTela('atividades')">Atividades</button>
+</nav>
+
+<main>
+
+    <section id="inicio" class="tela ativa">
+        <h2>Painel Inicial</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Moradores</h3>
+                <p id="totalMoradores">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Solicitações</h3>
+                <p id="totalSolicitacoes">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Atividades</h3>
+                <p id="totalAtividades">0</p>
+            </div>
+        </div>
+
+        <p>Bem-vindo ao sistema da associação comunitária!</p>
+    </section>
+
+    <section id="moradores" class="tela">
+        <h2>Cadastro de Moradores</h2>
+
+        <form id="formMorador">
+            <input type="hidden" id="moradorId">
+
+            <input type="text" id="nome"
+                placeholder="Nome completo" required>
+
+            <input type="text" id="telefone"
+                placeholder="Telefone" required>
+
+            <input type="email" id="email"
+                placeholder="E-mail">
+
+            <input type="text" id="endereco"
+                placeholder="Endereço">
+
+            <button type="submit">Salvar Morador</button>
+        </form>
+
+        <h3>Moradores cadastrados</h3>
+
+        <input type="text" id="pesquisa"
+            placeholder="Pesquisar morador">
+
+        <div id="listaMoradores"></div>
+    </section>
+
+    <section id="solicitacoes" class="tela">
+        <h2>Solicitações</h2>
+
+        <form id="formSolicitacao">
+            <select id="moradorSolicitacao" required>
+                <option value="">Selecione o morador</option>
+            </select>
+
+            <input type="text" id="descricao"
+                placeholder="Descrição da solicitação" required>
+
+            <select id="status">
+                <option>Em análise</option>
+                <option>Em andamento</option>
+                <option>Concluída</option>
+            </select>
+
+            <button type="submit">Registrar Solicitação</button>
+        </form>
+
+        <div id="listaSolicitacoes"></div>
+    </section>
+
+    <section id="atividades" class="tela">
+        <h2>Atividades Comunitárias</h2>
+
+        <form id="formAtividade">
+            <input type="text" id="nomeAtividade"
+                placeholder="Nome da atividade" required>
+
+            <input type="date" id="dataAtividade" required>
+
+            <input type="text" id="localAtividade"
+                placeholder="Local da atividade">
+
+            <button type="submit">Cadastrar Atividade</button>
+        </form>
+
+        <h3>Atividades cadastradas</h3>
+        <div id="listaAtividades"></div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
